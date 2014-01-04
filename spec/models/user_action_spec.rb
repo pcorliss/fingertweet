@@ -1,5 +1,7 @@
 require 'spec_helper'
 
 describe UserAction do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it "is valid" do
+    expect(FactoryGirl.build(:user_action)).to be_valid
+  end
 end
