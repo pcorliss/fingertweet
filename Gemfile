@@ -28,6 +28,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 gem 'haml-rails'
+gem 'factory_girl_rails'
 
 group :test, :development do
   gem 'pry'
