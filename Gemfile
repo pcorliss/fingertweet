@@ -29,6 +29,7 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'haml-rails'
 gem 'factory_girl_rails'
+gem 'twitter'
 
 group :test, :development do
   gem 'pry'
