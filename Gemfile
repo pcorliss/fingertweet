@@ -29,7 +29,7 @@ gem 'jbuilder', '~> 1.2'
 
 group :test, :development do
   gem 'pry'
-  gem 'rspec'
+  gem 'rspec-rails'
 end
 
 group :doc do
