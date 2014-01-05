@@ -30,6 +30,8 @@ gem 'jbuilder', '~> 1.2'
 gem 'haml-rails'
 gem 'factory_girl_rails'
 gem 'twitter'
+gem 'hashie'
+gem 'ice_nine'
 
 group :test, :development do
   gem 'pry'

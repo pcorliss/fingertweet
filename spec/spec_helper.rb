@@ -39,4 +39,11 @@ RSpec.configure do |config|
   # the seed, which is printed after each run.
   #     --seed 1234
   config.order = "random"
+
+  config.before(:each) do
+    # Explicitly prevent specs from being written which rely on configuration
+    # These should always be stubbed out instead
+    stub_const("AppConfig::CONFIG", 'does_not_exist')
+    stub_const("AppConfig::CONFIG_LOCAL", 'does_not_exist')
+  end
 end
