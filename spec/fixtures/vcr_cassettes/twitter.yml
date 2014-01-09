@@ -1,0 +1,344 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.twitter.com/1.1/search/tweets.json?count=3&result_type=recent&q=to%3AFingerTweeter
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - Twitter Ruby Gem 5.4.1
+      Authorization:
+      - OAuth oauth_consumer_key="6DNsy8vv6w0hykYqnwysaA", oauth_nonce="de774370ca1f66677b91034feced787c",
+        oauth_signature="cS5VPesqdESPaXa1aRSRu3l4QGM%3D", oauth_signature_method="HMAC-SHA1",
+        oauth_timestamp="1389243214", oauth_token="15880568-KGdVEEagHM8qlIlAdPbzlRCzH5n0XbWmQgvuJJEjd",
+        oauth_version="1.0"
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      cache-control:
+      - no-cache, no-store, must-revalidate, pre-check=0, post-check=0
+      content-length:
+      - '956'
+      content-type:
+      - application/json;charset=utf-8
+      date:
+      - Thu, 09 Jan 2014 04:53:33 GMT
+      expires:
+      - Tue, 31 Mar 1981 05:00:00 GMT
+      last-modified:
+      - Thu, 09 Jan 2014 04:53:33 GMT
+      pragma:
+      - no-cache
+      server:
+      - tfe
+      set-cookie:
+      - lang=en, guest_id=v1%3A138924321309133405; Domain=.twitter.com; Path=/; Expires=Sat,
+        09-Jan-2016 04:53:33 UTC
+      status:
+      - 200 OK
+      strict-transport-security:
+      - max-age=631138519
+      x-access-level:
+      - read
+      x-frame-options:
+      - SAMEORIGIN
+      x-rate-limit-limit:
+      - '180'
+      x-rate-limit-remaining:
+      - '177'
+      x-rate-limit-reset:
+      - '1389243846'
+      x-transaction:
+      - 2234cfdba3d61cef
+      x-xss-protection:
+      - 1; mode=block
+      connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"statuses":[{"metadata":{"result_type":"recent","iso_language_code":"en"},"created_at":"Thu
+        Jan 09 01:37:51 +0000 2014","id":421093429536247808,"id_str":"421093429536247808","text":"@FingerTweeter
+        I''m working on this neat thing.","source":"web","truncated":false,"in_reply_to_status_id":null,"in_reply_to_status_id_str":null,"in_reply_to_user_id":2282861455,"in_reply_to_user_id_str":"2282861455","in_reply_to_screen_name":"FingerTweeter","user":{"id":15880568,"id_str":"15880568","name":"pcorliss","screen_name":"pcorliss","location":"","description":"","url":null,"entities":{"description":{"urls":[]}},"protected":false,"followers_count":114,"friends_count":67,"listed_count":7,"created_at":"Sun
+        Aug 17 08:13:07 +0000 2008","favourites_count":23,"utc_offset":-21600,"time_zone":"Central
+        Time (US & Canada)","geo_enabled":false,"verified":false,"statuses_count":175,"lang":"en","contributors_enabled":false,"is_translator":false,"profile_background_color":"C0DEED","profile_background_image_url":"http:\/\/abs.twimg.com\/images\/themes\/theme1\/bg.png","profile_background_image_url_https":"https:\/\/abs.twimg.com\/images\/themes\/theme1\/bg.png","profile_background_tile":false,"profile_image_url":"http:\/\/pbs.twimg.com\/profile_images\/138557319\/1cafbfc0-a0fe-4fc6-b205-96a18514efae_normal.jpg","profile_image_url_https":"https:\/\/pbs.twimg.com\/profile_images\/138557319\/1cafbfc0-a0fe-4fc6-b205-96a18514efae_normal.jpg","profile_link_color":"0084B4","profile_sidebar_border_color":"C0DEED","profile_sidebar_fill_color":"DDEEF6","profile_text_color":"333333","profile_use_background_image":true,"default_profile":true,"default_profile_image":false,"following":false,"follow_request_sent":false,"notifications":false},"geo":null,"coordinates":null,"place":null,"contributors":null,"retweet_count":0,"favorite_count":0,"entities":{"hashtags":[],"symbols":[],"urls":[],"user_mentions":[{"screen_name":"FingerTweeter","name":"FingerTweeter","id":2282861455,"id_str":"2282861455","indices":[0,14]}]},"favorited":false,"retweeted":false,"lang":"en"}],"search_metadata":{"completed_in":0.038,"max_id":421093429536247808,"max_id_str":"421093429536247808","query":"to%3AFingerTweeter","refresh_url":"?since_id=421093429536247808&q=to%3AFingerTweeter&result_type=recent&include_entities=1","count":3,"since_id":0,"since_id_str":"0"}}'
+    http_version: 
+  recorded_at: Thu, 09 Jan 2014 04:53:35 GMT
+- request:
+    method: get
+    uri: https://api.twitter.com/1.1/search/tweets.json?result_type=recent&count=100&q=to%3AFingerTweeter
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - Twitter Ruby Gem 5.4.1
+      Authorization:
+      - OAuth oauth_consumer_key="6DNsy8vv6w0hykYqnwysaA", oauth_nonce="d79f51d30c18cb28b3f7f189ee8c4913",
+        oauth_signature="FzVzYa5DjO%2B0PS0muPSa7PA9eRY%3D", oauth_signature_method="HMAC-SHA1",
+        oauth_timestamp="1389243979", oauth_token="15880568-KGdVEEagHM8qlIlAdPbzlRCzH5n0XbWmQgvuJJEjd",
+        oauth_version="1.0"
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      cache-control:
+      - no-cache, no-store, must-revalidate, pre-check=0, post-check=0
+      content-length:
+      - '955'
+      content-type:
+      - application/json;charset=utf-8
+      date:
+      - Thu, 09 Jan 2014 05:06:19 GMT
+      expires:
+      - Tue, 31 Mar 1981 05:00:00 GMT
+      last-modified:
+      - Thu, 09 Jan 2014 05:06:19 GMT
+      pragma:
+      - no-cache
+      server:
+      - tfe
+      set-cookie:
+      - lang=en, guest_id=v1%3A138924397970062700; Domain=.twitter.com; Path=/; Expires=Sat,
+        09-Jan-2016 05:06:19 UTC
+      status:
+      - 200 OK
+      strict-transport-security:
+      - max-age=631138519
+      x-access-level:
+      - read
+      x-frame-options:
+      - SAMEORIGIN
+      x-rate-limit-limit:
+      - '180'
+      x-rate-limit-remaining:
+      - '179'
+      x-rate-limit-reset:
+      - '1389244879'
+      x-transaction:
+      - 925bfc4aedc51553
+      x-xss-protection:
+      - 1; mode=block
+      connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"statuses":[{"metadata":{"result_type":"recent","iso_language_code":"en"},"created_at":"Thu
+        Jan 09 01:37:51 +0000 2014","id":421093429536247808,"id_str":"421093429536247808","text":"@FingerTweeter
+        I''m working on this neat thing.","source":"web","truncated":false,"in_reply_to_status_id":null,"in_reply_to_status_id_str":null,"in_reply_to_user_id":2282861455,"in_reply_to_user_id_str":"2282861455","in_reply_to_screen_name":"FingerTweeter","user":{"id":15880568,"id_str":"15880568","name":"pcorliss","screen_name":"pcorliss","location":"","description":"","url":null,"entities":{"description":{"urls":[]}},"protected":false,"followers_count":114,"friends_count":67,"listed_count":7,"created_at":"Sun
+        Aug 17 08:13:07 +0000 2008","favourites_count":23,"utc_offset":-21600,"time_zone":"Central
+        Time (US & Canada)","geo_enabled":false,"verified":false,"statuses_count":175,"lang":"en","contributors_enabled":false,"is_translator":false,"profile_background_color":"C0DEED","profile_background_image_url":"http:\/\/abs.twimg.com\/images\/themes\/theme1\/bg.png","profile_background_image_url_https":"https:\/\/abs.twimg.com\/images\/themes\/theme1\/bg.png","profile_background_tile":false,"profile_image_url":"http:\/\/pbs.twimg.com\/profile_images\/138557319\/1cafbfc0-a0fe-4fc6-b205-96a18514efae_normal.jpg","profile_image_url_https":"https:\/\/pbs.twimg.com\/profile_images\/138557319\/1cafbfc0-a0fe-4fc6-b205-96a18514efae_normal.jpg","profile_link_color":"0084B4","profile_sidebar_border_color":"C0DEED","profile_sidebar_fill_color":"DDEEF6","profile_text_color":"333333","profile_use_background_image":true,"default_profile":true,"default_profile_image":false,"following":false,"follow_request_sent":false,"notifications":false},"geo":null,"coordinates":null,"place":null,"contributors":null,"retweet_count":0,"favorite_count":0,"entities":{"hashtags":[],"symbols":[],"urls":[],"user_mentions":[{"screen_name":"FingerTweeter","name":"FingerTweeter","id":2282861455,"id_str":"2282861455","indices":[0,14]}]},"favorited":false,"retweeted":false,"lang":"en"}],"search_metadata":{"completed_in":0.026,"max_id":421093429536247808,"max_id_str":"421093429536247808","query":"to%3AFingerTweeter","refresh_url":"?since_id=421093429536247808&q=to%3AFingerTweeter&result_type=recent&include_entities=1","count":100,"since_id":0,"since_id_str":"0"}}'
+    http_version: 
+  recorded_at: Thu, 09 Jan 2014 05:06:19 GMT
+- request:
+    method: get
+    uri: https://api.twitter.com/1.1/search/tweets.json?result_type=recent&count=100&q=to%3AFingerTweeter
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - Twitter Ruby Gem 5.4.1
+      Authorization:
+      - OAuth oauth_consumer_key="6DNsy8vv6w0hykYqnwysaA", oauth_nonce="887745f60284038f9092978a747d83bb",
+        oauth_signature="nNQrsX5jLZOl6a8caDqJFj3H6Ag%3D", oauth_signature_method="HMAC-SHA1",
+        oauth_timestamp="1389244007", oauth_token="15880568-KGdVEEagHM8qlIlAdPbzlRCzH5n0XbWmQgvuJJEjd",
+        oauth_version="1.0"
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      cache-control:
+      - no-cache, no-store, must-revalidate, pre-check=0, post-check=0
+      content-length:
+      - '955'
+      content-type:
+      - application/json;charset=utf-8
+      date:
+      - Thu, 09 Jan 2014 05:06:47 GMT
+      expires:
+      - Tue, 31 Mar 1981 05:00:00 GMT
+      last-modified:
+      - Thu, 09 Jan 2014 05:06:47 GMT
+      pragma:
+      - no-cache
+      server:
+      - tfe
+      set-cookie:
+      - lang=en, guest_id=v1%3A138924400771086744; Domain=.twitter.com; Path=/; Expires=Sat,
+        09-Jan-2016 05:06:47 UTC
+      status:
+      - 200 OK
+      strict-transport-security:
+      - max-age=631138519
+      x-access-level:
+      - read
+      x-frame-options:
+      - SAMEORIGIN
+      x-rate-limit-limit:
+      - '180'
+      x-rate-limit-remaining:
+      - '178'
+      x-rate-limit-reset:
+      - '1389244879'
+      x-transaction:
+      - b2940d9fea7b0141
+      x-xss-protection:
+      - 1; mode=block
+      connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"statuses":[{"metadata":{"result_type":"recent","iso_language_code":"en"},"created_at":"Thu
+        Jan 09 01:37:51 +0000 2014","id":421093429536247808,"id_str":"421093429536247808","text":"@FingerTweeter
+        I''m working on this neat thing.","source":"web","truncated":false,"in_reply_to_status_id":null,"in_reply_to_status_id_str":null,"in_reply_to_user_id":2282861455,"in_reply_to_user_id_str":"2282861455","in_reply_to_screen_name":"FingerTweeter","user":{"id":15880568,"id_str":"15880568","name":"pcorliss","screen_name":"pcorliss","location":"","description":"","url":null,"entities":{"description":{"urls":[]}},"protected":false,"followers_count":114,"friends_count":67,"listed_count":7,"created_at":"Sun
+        Aug 17 08:13:07 +0000 2008","favourites_count":23,"utc_offset":-21600,"time_zone":"Central
+        Time (US & Canada)","geo_enabled":false,"verified":false,"statuses_count":175,"lang":"en","contributors_enabled":false,"is_translator":false,"profile_background_color":"C0DEED","profile_background_image_url":"http:\/\/abs.twimg.com\/images\/themes\/theme1\/bg.png","profile_background_image_url_https":"https:\/\/abs.twimg.com\/images\/themes\/theme1\/bg.png","profile_background_tile":false,"profile_image_url":"http:\/\/pbs.twimg.com\/profile_images\/138557319\/1cafbfc0-a0fe-4fc6-b205-96a18514efae_normal.jpg","profile_image_url_https":"https:\/\/pbs.twimg.com\/profile_images\/138557319\/1cafbfc0-a0fe-4fc6-b205-96a18514efae_normal.jpg","profile_link_color":"0084B4","profile_sidebar_border_color":"C0DEED","profile_sidebar_fill_color":"DDEEF6","profile_text_color":"333333","profile_use_background_image":true,"default_profile":true,"default_profile_image":false,"following":false,"follow_request_sent":false,"notifications":false},"geo":null,"coordinates":null,"place":null,"contributors":null,"retweet_count":0,"favorite_count":0,"entities":{"hashtags":[],"symbols":[],"urls":[],"user_mentions":[{"screen_name":"FingerTweeter","name":"FingerTweeter","id":2282861455,"id_str":"2282861455","indices":[0,14]}]},"favorited":false,"retweeted":false,"lang":"en"}],"search_metadata":{"completed_in":0.024,"max_id":421093429536247808,"max_id_str":"421093429536247808","query":"to%3AFingerTweeter","refresh_url":"?since_id=421093429536247808&q=to%3AFingerTweeter&result_type=recent&include_entities=1","count":100,"since_id":0,"since_id_str":"0"}}'
+    http_version: 
+  recorded_at: Thu, 09 Jan 2014 05:06:47 GMT
+- request:
+    method: get
+    uri: https://api.twitter.com/1.1/search/tweets.json?result_type=recent&since_id&count=100&q=to%3AFingerTweeter
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - Twitter Ruby Gem 5.4.1
+      Authorization:
+      - OAuth oauth_consumer_key="6DNsy8vv6w0hykYqnwysaA", oauth_nonce="e6561c8e9130c192ea408de40372fc26",
+        oauth_signature="Sn5OvcipQQa4FrZBHcqP5sGn7lI%3D", oauth_signature_method="HMAC-SHA1",
+        oauth_timestamp="1389244300", oauth_token="15880568-KGdVEEagHM8qlIlAdPbzlRCzH5n0XbWmQgvuJJEjd",
+        oauth_version="1.0"
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      cache-control:
+      - no-cache, no-store, must-revalidate, pre-check=0, post-check=0
+      content-length:
+      - '955'
+      content-type:
+      - application/json;charset=utf-8
+      date:
+      - Thu, 09 Jan 2014 05:11:41 GMT
+      expires:
+      - Tue, 31 Mar 1981 05:00:00 GMT
+      last-modified:
+      - Thu, 09 Jan 2014 05:11:41 GMT
+      pragma:
+      - no-cache
+      server:
+      - tfe
+      set-cookie:
+      - lang=en, guest_id=v1%3A138924430107194855; Domain=.twitter.com; Path=/; Expires=Sat,
+        09-Jan-2016 05:11:41 UTC
+      status:
+      - 200 OK
+      strict-transport-security:
+      - max-age=631138519
+      x-access-level:
+      - read
+      x-frame-options:
+      - SAMEORIGIN
+      x-rate-limit-limit:
+      - '180'
+      x-rate-limit-remaining:
+      - '177'
+      x-rate-limit-reset:
+      - '1389244879'
+      x-transaction:
+      - 8dd9ac3b9057d7ef
+      x-xss-protection:
+      - 1; mode=block
+      connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"statuses":[{"metadata":{"result_type":"recent","iso_language_code":"en"},"created_at":"Thu
+        Jan 09 01:37:51 +0000 2014","id":421093429536247808,"id_str":"421093429536247808","text":"@FingerTweeter
+        I''m working on this neat thing.","source":"web","truncated":false,"in_reply_to_status_id":null,"in_reply_to_status_id_str":null,"in_reply_to_user_id":2282861455,"in_reply_to_user_id_str":"2282861455","in_reply_to_screen_name":"FingerTweeter","user":{"id":15880568,"id_str":"15880568","name":"pcorliss","screen_name":"pcorliss","location":"","description":"","url":null,"entities":{"description":{"urls":[]}},"protected":false,"followers_count":114,"friends_count":67,"listed_count":7,"created_at":"Sun
+        Aug 17 08:13:07 +0000 2008","favourites_count":23,"utc_offset":-21600,"time_zone":"Central
+        Time (US & Canada)","geo_enabled":false,"verified":false,"statuses_count":175,"lang":"en","contributors_enabled":false,"is_translator":false,"profile_background_color":"C0DEED","profile_background_image_url":"http:\/\/abs.twimg.com\/images\/themes\/theme1\/bg.png","profile_background_image_url_https":"https:\/\/abs.twimg.com\/images\/themes\/theme1\/bg.png","profile_background_tile":false,"profile_image_url":"http:\/\/pbs.twimg.com\/profile_images\/138557319\/1cafbfc0-a0fe-4fc6-b205-96a18514efae_normal.jpg","profile_image_url_https":"https:\/\/pbs.twimg.com\/profile_images\/138557319\/1cafbfc0-a0fe-4fc6-b205-96a18514efae_normal.jpg","profile_link_color":"0084B4","profile_sidebar_border_color":"C0DEED","profile_sidebar_fill_color":"DDEEF6","profile_text_color":"333333","profile_use_background_image":true,"default_profile":true,"default_profile_image":false,"following":false,"follow_request_sent":false,"notifications":false},"geo":null,"coordinates":null,"place":null,"contributors":null,"retweet_count":0,"favorite_count":0,"entities":{"hashtags":[],"symbols":[],"urls":[],"user_mentions":[{"screen_name":"FingerTweeter","name":"FingerTweeter","id":2282861455,"id_str":"2282861455","indices":[0,14]}]},"favorited":false,"retweeted":false,"lang":"en"}],"search_metadata":{"completed_in":0.009,"max_id":421093429536247808,"max_id_str":"421093429536247808","query":"to%3AFingerTweeter","refresh_url":"?since_id=421093429536247808&q=to%3AFingerTweeter&result_type=recent&include_entities=1","count":100,"since_id":0,"since_id_str":"0"}}'
+    http_version: 
+  recorded_at: Thu, 09 Jan 2014 05:11:41 GMT
+- request:
+    method: get
+    uri: https://api.twitter.com/1.1/search/tweets.json?result_type=recent&since_id=421093429536247808&count=100&q=to%3AFingerTweeter
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - application/json
+      User-Agent:
+      - Twitter Ruby Gem 5.4.1
+      Authorization:
+      - OAuth oauth_consumer_key="6DNsy8vv6w0hykYqnwysaA", oauth_nonce="a2afacba62b5b0fff6b96763a15980f3",
+        oauth_signature="9lJGpjwmZDOtc2Tki0vyhl%2FDaB8%3D", oauth_signature_method="HMAC-SHA1",
+        oauth_timestamp="1389244301", oauth_token="15880568-KGdVEEagHM8qlIlAdPbzlRCzH5n0XbWmQgvuJJEjd",
+        oauth_version="1.0"
+  response:
+    status:
+      code: 200
+      message: 
+    headers:
+      cache-control:
+      - no-cache, no-store, must-revalidate, pre-check=0, post-check=0
+      content-length:
+      - '228'
+      content-type:
+      - application/json;charset=utf-8
+      date:
+      - Thu, 09 Jan 2014 05:11:41 GMT
+      expires:
+      - Tue, 31 Mar 1981 05:00:00 GMT
+      last-modified:
+      - Thu, 09 Jan 2014 05:11:41 GMT
+      pragma:
+      - no-cache
+      server:
+      - tfe
+      set-cookie:
+      - lang=en, guest_id=v1%3A138924430143553077; Domain=.twitter.com; Path=/; Expires=Sat,
+        09-Jan-2016 05:11:41 UTC
+      status:
+      - 200 OK
+      strict-transport-security:
+      - max-age=631138519
+      x-access-level:
+      - read
+      x-frame-options:
+      - SAMEORIGIN
+      x-rate-limit-limit:
+      - '180'
+      x-rate-limit-remaining:
+      - '176'
+      x-rate-limit-reset:
+      - '1389244879'
+      x-transaction:
+      - a26e9b2e5c5eca62
+      x-xss-protection:
+      - 1; mode=block
+      connection:
+      - close
+    body:
+      encoding: UTF-8
+      string: '{"statuses":[],"search_metadata":{"completed_in":0.043,"max_id":421147177184788481,"max_id_str":"421147177184788481","query":"to%3AFingerTweeter","refresh_url":"?since_id=421147177184788481&q=to%3AFingerTweeter&result_type=recent&include_entities=1","count":100,"since_id":421093429536247808,"since_id_str":"421093429536247808"}}'
+    http_version: 
+  recorded_at: Thu, 09 Jan 2014 05:11:41 GMT
+recorded_with: VCR 2.8.0

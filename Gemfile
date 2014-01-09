@@ -35,7 +35,12 @@ gem 'ice_nine'
 
 group :test, :development do
   gem 'pry'
+  gem 'wirble'
+end
+
+group :test do
   gem 'rspec-rails'
+  gem 'vcr'
 end
 
 group :doc do
