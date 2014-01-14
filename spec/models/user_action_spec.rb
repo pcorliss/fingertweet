@@ -15,6 +15,11 @@ describe UserAction do
           YAML.load_file(File.join(Rails.root, 'config', 'local', 'twitter.yml'))
         )
       )
+      AppConfig.stub(
+        actions: Hashie::Mash.new(
+          YAML.load_file(File.join(Rails.root, 'config', 'actions.yml'))
+        )
+      )
     end
 
     it "creates new UserActions based on twitter api calls to FingerTweeter User" do
@@ -32,6 +37,13 @@ describe UserAction do
         expect do
           UserAction.create_recent_user_actions
         end.to_not change { UserAction.count }
+      end
+    end
+
+    it "deciphers the action from the tweet text" do
+      VCR.use_cassette("twitter", :record => :new_episodes) do
+        UserAction.create_recent_user_actions
+        expect(UserAction.last.action).to eq('worked')
       end
     end
 

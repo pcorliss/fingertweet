@@ -5,8 +5,8 @@ class UserAction < ActiveRecord::Base
         create(
           twitter_user: tweet.user.screen_name,
           content: tweet.text,
-          past_tense: false,
-          action: nil,
+          past_tense: false, # TODO this seemed necessary initially, might want to remove it.
+          action: discover_action(tweet.text),
           tweet_id: tweet.id
         )
       end
