@@ -37,5 +37,28 @@ describe UserAction do
 
     # TODO at the moment we don't have enough tweets to check this
     it "handles pagination"
+
+  end
+
+  describe "#discover_action" do
+    before do
+     AppConfig.stub(
+        actions: Hashie::Mash.new(
+          YAML.load_file(File.join(Rails.root, 'config', 'actions.yml'))
+        )
+      )
+    end
+
+    it "uses the text of a tweet to discover what action the tweet is describing" do
+      expect(UserAction.discover_action("I'm watching the news")).to eq('watched')
+    end
+
+    it "recognizes past tense" do
+      expect(UserAction.discover_action("I watched the news")).to eq('watched')
+    end
+
+    it "returns nil if no match is found" do
+      expect(UserAction.discover_action("new cool stuff")).to be_nil
+    end
   end
 end
