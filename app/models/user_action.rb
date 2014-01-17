@@ -1,4 +1,8 @@
 class UserAction < ActiveRecord::Base
+  def presentable_content
+    content.gsub(/@FingerTweeter\s+/, '')
+  end
+
   class << self
     def create_recent_user_actions
       last_tweet_id_captured = maximum(:tweet_id) || 0
@@ -24,8 +28,6 @@ class UserAction < ActiveRecord::Base
       end
       nil
     end
-
-    # TODO strip @TwitterFinger out and for presentation
 
     private
 

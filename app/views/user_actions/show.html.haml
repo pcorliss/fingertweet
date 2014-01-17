@@ -4,7 +4,7 @@
     %li
       %i.fa{:class => action_icons(action.action), :title => action.action}
       \::
-      = action.content
+      = action.presentable_content
       \::
       = time_ago_in_words action.created_at
       ago

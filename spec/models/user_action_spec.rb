@@ -60,4 +60,11 @@ describe UserAction do
       expect(UserAction.discover_action("new cool stuff")).to be_nil
     end
   end
+
+  describe "#presentable_content" do
+    it "strips out the '@FingerTweeter' recipient" do
+      ua = FactoryGirl.build(:user_action, content: '@FingerTweeter I just worked on this really cool thing.')
+      expect(ua.presentable_content).to eq('I just worked on this really cool thing.')
+    end
+  end
 end
