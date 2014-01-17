@@ -1,14 +1,17 @@
 class UserAction < ActiveRecord::Base
   class << self
     def create_recent_user_actions
-      twitter_client.search("to:FingerTweeter", result_type: "recent", since_id: maximum(:tweet_id)).map do |tweet|
-        create(
-          twitter_user: tweet.user.screen_name,
-          content: tweet.text,
-          past_tense: false, # TODO this seemed necessary initially, might want to remove it.
-          action: discover_action(tweet.text),
-          tweet_id: tweet.id
-        )
+      last_tweet_id_captured = maximum(:tweet_id) || 0
+      twitter_client.mentions.map do |tweet|
+        if tweet.id > last_tweet_id_captured
+          create(
+            twitter_user: tweet.user.screen_name,
+            content: tweet.text,
+            past_tense: false, # TODO this seemed necessary initially, might want to remove it.
+            action: discover_action(tweet.text),
+            tweet_id: tweet.id
+          )
+        end
       end
     end
 
