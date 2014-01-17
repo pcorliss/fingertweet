@@ -9,7 +9,8 @@ class UserAction < ActiveRecord::Base
             content: tweet.text,
             past_tense: false, # TODO this seemed necessary initially, might want to remove it.
             action: discover_action(tweet.text),
-            tweet_id: tweet.id
+            tweet_id: tweet.id,
+            created_at: tweet.created_at
           )
         end
       end
