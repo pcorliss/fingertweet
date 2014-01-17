@@ -1,10 +1,12 @@
+= content_for :title, "@#{@user.twitter_user}"
 .table-responsive
   %table.table
-    %tr
-      %th{colspan: 3}
-        %h3
-          = image_tag @user.avatar_uri
-          = "@#{@user.twitter_user}"
+    %thead
+      %tr
+        %th{colspan: 3}
+          %h3
+            = image_tag @user.avatar_uri
+            = "@#{@user.twitter_user}"
     - @actions.each do |action|
       %tr
         %td
