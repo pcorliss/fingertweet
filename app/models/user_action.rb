@@ -10,6 +10,7 @@ class UserAction < ActiveRecord::Base
       last_tweet_id_captured = maximum(:tweet_id) || 0
       twitter_client.mentions.map do |tweet|
         if tweet.id > last_tweet_id_captured
+          # TODO we can cache this lookup and make this a bit more performant
           user = User.find_or_create_by(twitter_user: tweet.user.screen_name)
           user.update_attributes(avatar_uri: tweet.user.profile_image_uri.to_s)
           user.user_actions.create(

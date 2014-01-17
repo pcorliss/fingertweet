@@ -1,4 +1,6 @@
-%h3= "@#{params[:id]}"
+%h3
+  = image_tag @user.avatar_uri
+  = "@#{@user.twitter_user}"
 %ul
   - @actions.each do |action|
     %li
