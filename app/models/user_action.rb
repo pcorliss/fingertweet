@@ -1,24 +1,18 @@
 class UserAction < ActiveRecord::Base
+  belongs_to :user
+
   def presentable_content
     content.gsub(/@FingerTweeter\s+/, '')
   end
 
   class << self
-    def most_recent_by_user(user)
-      # TODO evaluate performance of doing this as a subselect, table join instead of ruby
-      user_tweets = where(twitter_user: user).order(:created_at).reverse_order
-      user_tweets.inject({}) do |action_tweets, tweet|
-        action_tweets[tweet.action] ||= tweet
-        action_tweets
-      end.values
-    end
-
     def create_recent_user_actions
       last_tweet_id_captured = maximum(:tweet_id) || 0
       twitter_client.mentions.map do |tweet|
         if tweet.id > last_tweet_id_captured
-          create(
-            twitter_user: tweet.user.screen_name,
+          user = User.find_or_create_by(twitter_user: tweet.user.screen_name)
+          user.update_attributes(avatar_uri: tweet.user.profile_image_uri.to_s)
+          user.user_actions.create(
             content: tweet.text,
             past_tense: false, # TODO this seemed necessary initially, might want to remove it.
             action: discover_action(tweet.text),

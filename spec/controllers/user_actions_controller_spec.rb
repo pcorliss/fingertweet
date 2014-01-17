@@ -3,7 +3,8 @@ require 'spec_helper'
 describe UserActionsController do
   describe '#show' do
     it "lookup via twitter_user" do
-      action = FactoryGirl.create(:user_action)
+      user = FactoryGirl.create(:user)
+      action = FactoryGirl.create(:user_action, user: user)
       get :show, :id => 'pcorliss_fake'
       expect(assigns(:actions)).to eq([action])
     end

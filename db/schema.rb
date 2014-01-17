@@ -11,16 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140109050908) do
+ActiveRecord::Schema.define(version: 20140117193815) do
 
   create_table "user_actions", force: true do |t|
-    t.string   "twitter_user"
     t.string   "action"
     t.text     "content"
     t.boolean  "past_tense"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "tweet_id"
+    t.integer  "user_id"
+  end
+
+  create_table "users", force: true do |t|
+    t.string   "twitter_user"
+    t.string   "avatar_uri"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end

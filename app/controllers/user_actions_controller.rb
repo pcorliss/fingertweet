@@ -3,8 +3,9 @@ class UserActionsController < ApplicationController
   respond_to :html
 
   def show
-    @actions = UserAction.most_recent_by_user params[:id]
-    raise ActiveRecord::RecordNotFound if @actions.empty?
+    @user = User.find_by_twitter_user(params[:id])
+    raise ActiveRecord::RecordNotFound unless @user
+    @actions = @user.most_recent_actions
     respond_with @actions
   end
 end
