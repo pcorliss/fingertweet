@@ -1,12 +1,16 @@
-%h3
-  = image_tag @user.avatar_uri
-  = "@#{@user.twitter_user}"
-%ul
-  - @actions.each do |action|
-    %li
-      %i.fa{:class => action_icons(action.action), :title => action.action}
-      \::
-      = action.presentable_content
-      \::
-      = time_ago_in_words action.created_at
-      ago
+.table-responsive
+  %table.table
+    %tr
+      %th{colspan: 3}
+        %h3
+          = image_tag @user.avatar_uri
+          = "@#{@user.twitter_user}"
+    - @actions.each do |action|
+      %tr
+        %td
+          %i.fa{:class => action_icons(action.action), :title => action.action}
+        %td
+          = action.presentable_content
+        %td
+          = time_ago_in_words action.created_at
+          ago
