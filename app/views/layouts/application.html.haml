@@ -3,7 +3,17 @@
   %head
     %title
     = stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true
+    = stylesheet_link_tag "//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css"
+    = stylesheet_link_tag "//netdna.bootstrapcdn.com/font-awesome/4.0.1/css/font-awesome.min.css"
+
     = javascript_include_tag "application", "data-turbolinks-track" => true
+    = javascript_include_tag "//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"
+
     = csrf_meta_tags
   %body
-    = yield
+
+    .container
+      .row.clearfix
+        .col-md-12.column
+
+          = yield

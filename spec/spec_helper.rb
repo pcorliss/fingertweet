@@ -46,9 +46,8 @@ RSpec.configure do |config|
   config.order = "random"
 
   config.before(:each) do
-    # Explicitly prevent specs from being written which rely on configuration
+    # Explicitly prevent specs from being written which rely on local configuration
     # These should always be stubbed out instead
-    stub_const("AppConfig::CONFIG", 'does_not_exist')
     stub_const("AppConfig::CONFIG_LOCAL", 'does_not_exist')
   end
 end

@@ -17,13 +17,15 @@ class UserAction < ActiveRecord::Base
     end
 
     def discover_action(text)
-      AppConfig.actions.each do |action, action_tenses|
+      AppConfig.actions.tenses.each do |action, action_tenses|
         action_tenses.each do |tense|
           return action if text.include?(tense)
         end
       end
       nil
     end
+
+    # TODO strip @TwitterFinger out and for presentation
 
     private
 

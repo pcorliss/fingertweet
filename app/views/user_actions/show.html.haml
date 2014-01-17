@@ -1,5 +1,7 @@
-UserActions#Show
-
+%h3= "@#{params[:id]}"
 %ul
   - @actions.each do |action|
-    %li #{action.content}
+    %li
+      %i.fa{:class => action_icons(action.action), :title => action.action}
+      \::
+      #{action.content}

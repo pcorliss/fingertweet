@@ -1,5 +1,14 @@
-worked: [working, worked]
-ate: [eating, ate]
-watched: [watched, watching]
-listened: [listened, listening]
+tenses:
+  worked:   [working, worked]
+  ate:      [eating, ate]
+  watched:  [watched, watching]
+  listened: [listened, listening]
+  read:     [read, reading]
 
+icons:
+  listened: fa-music
+  ate:      fa-cutlery
+  watched:  fa-film
+  worked:   fa-pencil
+  read:     fa-book
+  unknown:  fa-question
