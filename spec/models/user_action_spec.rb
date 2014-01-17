@@ -67,4 +67,22 @@ describe UserAction do
       expect(ua.presentable_content).to eq('I just worked on this really cool thing.')
     end
   end
+
+  describe "#most_recent_by_user" do
+    before do
+      @pc_reading = FactoryGirl.create(:user_action, action: 'read', created_at: 5.minutes.ago)
+      @pc_working = FactoryGirl.create(:user_action, action: 'worked', created_at: 4.minutes.ago)
+    end
+
+    it "returns most recent user actions for only the user specified" do
+      FactoryGirl.create(:user_action, twitter_user: 'other_user')
+      expect(UserAction.most_recent_by_user('pcorliss_fake').to_a).to eq([@pc_working, @pc_reading])
+    end
+
+    it "only returns the most recent user action in a particular action group" do
+      FactoryGirl.create(:user_action, action: 'read', created_at: 1.day.ago)
+      FactoryGirl.create(:user_action, action: 'worked', created_at: 2.days.ago)
+      expect(UserAction.most_recent_by_user('pcorliss_fake').to_a).to eq([@pc_working, @pc_reading])
+    end
+  end
 end

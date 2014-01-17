@@ -4,6 +4,15 @@ class UserAction < ActiveRecord::Base
   end
 
   class << self
+    def most_recent_by_user(user)
+      # TODO evaluate performance of doing this as a subselect, table join instead of ruby
+      user_tweets = where(twitter_user: user).order(:created_at).reverse_order
+      user_tweets.inject({}) do |action_tweets, tweet|
+        action_tweets[tweet.action] ||= tweet
+        action_tweets
+      end.values
+    end
+
     def create_recent_user_actions
       last_tweet_id_captured = maximum(:tweet_id) || 0
       twitter_client.mentions.map do |tweet|
