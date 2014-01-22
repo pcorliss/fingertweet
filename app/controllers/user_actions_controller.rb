@@ -10,6 +10,6 @@ class UserActionsController < ApplicationController
   end
 
   def index
-    @actions = UserAction.order(:created_at).reverse_order
+    @actions = UserAction.order(:created_at).reverse_order.includes(:user)
   end
 end
