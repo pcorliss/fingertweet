@@ -8,4 +8,8 @@ class UserActionsController < ApplicationController
     @actions = @user.most_recent_actions
     respond_with @actions
   end
+
+  def index
+    @actions = UserAction.order(:created_at).reverse_order
+  end
 end

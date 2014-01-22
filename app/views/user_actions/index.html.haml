@@ -1,0 +1,9 @@
+%h3 Recent Tweets
+.table-responsive
+  %table.table
+    - @actions.each do |action|
+      %tr
+        %td
+          = link_to user_action_path(:id => action.user.twitter_user) do
+            = image_tag(action.user.avatar_uri, :title => "@#{action.user.twitter_user}")
+        = render 'action_field', :action => action

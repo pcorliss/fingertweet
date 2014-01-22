@@ -1,4 +1,5 @@
 FingerTweet::Application.routes.draw do
-  #root 'home#index'
-  resources :user_actions, path: '', only: [:show]
+  # Note: This satisifies the root path
+  # TODO Handle resources like favicon and apple touch icon, etc..
+  resources :user_actions, path: '', only: [:show, :index]
 end

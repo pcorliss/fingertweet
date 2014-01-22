@@ -1,0 +1,7 @@
+%td
+  %i.fa{:class => action_icons(action.action), :title => action.action}
+%td
+  = action.presentable_content
+%td
+  = time_ago_in_words action.created_at
+  ago

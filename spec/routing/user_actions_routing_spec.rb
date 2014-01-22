@@ -8,4 +8,11 @@ describe "routing to user_actions" do
       :id => "pcorliss_fake"
     )
   end
+
+  it "routes / to user_actions#index" do
+    expect(:get => "/").to route_to(
+      :controller => "user_actions",
+      :action => "index"
+    )
+  end
 end

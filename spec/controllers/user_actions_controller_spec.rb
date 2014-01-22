@@ -15,4 +15,12 @@ describe UserActionsController do
       end.to raise_error ActiveRecord::RecordNotFound
     end
   end
+
+  describe "#index" do
+    it "finds the 10 most recent actions" do
+      user_actions = 10.times.map { FactoryGirl.create(:user_action) }
+      get :index
+      expect(assigns(:actions)).to eq(user_actions.reverse)
+    end
+  end
 end
