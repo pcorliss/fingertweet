@@ -49,4 +49,9 @@ describe AppConfig do
       AppConfig.defaults.buzz.cola = 'foo'
     end.to raise_error(RuntimeError, "can't modify frozen Hashie::Mash")
   end
+
+  it "overrides config variables when ENV variables are present" do
+    stub_const('ENV', {'defaults-buzz-cola' => 'Totally Awesome!'})
+    expect(AppConfig.defaults.buzz.cola).to eq('Totally Awesome!')
+  end
 end
