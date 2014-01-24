@@ -23,7 +23,7 @@ class UserAction < ActiveRecord::Base
     def discover_action(text)
       AppConfig.actions.tenses.each do |action, action_tenses|
         action_tenses.each do |tense|
-          return action if text.include?(tense)
+          return action if text.include?("\s#{tense}\s")
         end
       end
       'unknown'

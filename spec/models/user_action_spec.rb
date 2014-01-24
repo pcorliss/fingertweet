@@ -59,5 +59,9 @@ describe UserAction do
     it "returns unknown if no match is found" do
       expect(UserAction.discover_action("new cool stuff")).to eq('unknown')
     end
+
+    it "knows the difference between a word containing a tense and the actual tense" do
+      expect(UserAction.discover_action("I've ruminated on it")).to eq('unknown')
+    end
   end
 end
