@@ -56,15 +56,8 @@ describe UserAction do
       expect(UserAction.discover_action("I watched the news")).to eq('watched')
     end
 
-    it "returns nil if no match is found" do
-      expect(UserAction.discover_action("new cool stuff")).to be_nil
-    end
-  end
-
-  describe "#presentable_content" do
-    it "strips out the '@FingerTweeter' recipient" do
-      ua = FactoryGirl.build(:user_action, content: '@FingerTweeter I just worked on this really cool thing.')
-      expect(ua.presentable_content).to eq('I just worked on this really cool thing.')
+    it "returns unknown if no match is found" do
+      expect(UserAction.discover_action("new cool stuff")).to eq('unknown')
     end
   end
 end

@@ -1,10 +1,6 @@
 class UserAction < ActiveRecord::Base
   belongs_to :user
 
-  def presentable_content
-    content.gsub(/@FingerTweeter\s+/, '')
-  end
-
   class << self
     def create_recent_user_actions
       last_tweet_id_captured = maximum(:tweet_id) || 0
@@ -30,7 +26,7 @@ class UserAction < ActiveRecord::Base
           return action if text.include?(tense)
         end
       end
-      nil
+      'unknown'
     end
 
     private
