@@ -12,4 +12,10 @@ class UserActionsController < ApplicationController
   def index
     @actions = UserAction.order(:created_at).reverse_order.includes(:user)
   end
+
+  # Collection Update
+  # POST /update
+  #def update
+
+  #end
 end

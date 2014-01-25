@@ -15,4 +15,11 @@ describe "routing to user_actions" do
       :action => "index"
     )
   end
+
+  it "routes POST /reindex to user_actions#reindex" do
+    expect(:post => "/reindex").to route_to(
+      :controller => "user_actions",
+      :action => "reindex"
+    )
+  end
 end
