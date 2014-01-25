@@ -1,0 +1,18 @@
+.footer
+  .pull-right
+    - if @last_index
+      .row.clearfix
+        Last updated
+        = time_ago_in_words @last_index
+        ago
+    - if @last_index.nil? || @last_index < 1.minute.ago
+      .row.clearfix
+        Old results?
+        = link_to 'Update Now', reindex_user_actions_path, :method => :post
+
+  .pull-left
+    %b
+      .row.clearfix
+        = link_to '@pcorliss', "https://twitter.com/pcorliss"
+      .row.clearfix
+        = link_to 'blog.50projects.com', "http://blog.50projects.com/"
