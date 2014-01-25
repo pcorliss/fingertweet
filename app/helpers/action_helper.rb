@@ -16,4 +16,11 @@ module ActionHelper
   def sanitize_content(text)
     embed_links(strip_twitter_to(text))
   end
+
+  def twitter_linker(twitter_handle)
+    if current_page?(user_action_path(:id => twitter_handle)) || !User.exists?(:twitter_user => twitter_handle)
+      return link_to '@' + twitter_handle, "https://twitter.com/#{twitter_handle}"
+    end
+    link_to '@' + twitter_handle, user_action_path(:id => twitter_handle)
+  end
 end

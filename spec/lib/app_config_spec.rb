@@ -1,5 +1,4 @@
 require 'spec_helper'
-require 'app_config'
 
 describe AppConfig do
   before do

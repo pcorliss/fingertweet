@@ -9,4 +9,8 @@ class User < ActiveRecord::Base
       action_tweets
     end.values
   end
+
+  def twitter_handle
+    "@" + twitter_user
+  end
 end

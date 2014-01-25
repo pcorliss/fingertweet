@@ -49,4 +49,24 @@ describe ActionHelper do
       expect(sanitize_content(sample_text)).to eq(expected_text)
     end
   end
+
+  describe "#twitter_linker" do
+    it "links to a user's page" do
+      user = FactoryGirl.create(:user)
+      expected_link = '<a href="/pcorliss_fake">@pcorliss_fake</a>'
+      expect(helper.twitter_linker(user.twitter_user)).to eq(expected_link)
+    end
+
+    it "links back to twitter if you're on the user's page" do
+      user = FactoryGirl.create(:user)
+      helper.stub(:current_page? => true)
+      expected_link = '<a href="https://twitter.com/pcorliss_fake">@pcorliss_fake</a>'
+      expect(helper.twitter_linker(user.twitter_user)).to eq(expected_link)
+    end
+
+    it "links to twitter if there is no user in the system" do
+      expected_link = '<a href="https://twitter.com/fake_user">@fake_user</a>'
+      expect(helper.twitter_linker('fake_user')).to eq(expected_link)
+    end
+  end
 end

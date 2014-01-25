@@ -6,7 +6,7 @@
         %th{colspan: 3}
           %h3
             = image_tag @user.avatar_uri
-            = "@#{@user.twitter_user}"
+            = twitter_linker @user.twitter_user
     - @actions.each do |action|
       %tr
         = render 'action_field', :action => action

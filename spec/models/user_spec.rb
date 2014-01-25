@@ -19,4 +19,11 @@ describe User do
       expect(@me.most_recent_actions.to_a).to eq([@pc_working, @pc_reading])
     end
   end
+
+  describe "#twitter_handle" do
+    it "returns the user's twitter handle with the @ symbol prepended" do
+      user = FactoryGirl.build(:user)
+      expect(user.twitter_handle).to eq("@pcorliss_fake")
+    end
+  end
 end
