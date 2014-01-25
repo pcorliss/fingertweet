@@ -38,6 +38,10 @@ gem 'ice_nine'
 gem 'rails_12factor', group: :production
 gem 'unicorn'
 
+# Heroku Memcachier
+gem 'memcachier'
+gem 'dalli'
+
 group :test, :development do
   gem 'pry'
   gem 'wirble'

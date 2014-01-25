@@ -50,5 +50,8 @@ RSpec.configure do |config|
     # Explicitly prevent specs from being written which rely on local configuration
     # These should always be stubbed out instead
     stub_const("AppConfig::CONFIG_LOCAL", 'does_not_exist')
+
+    # Clear the cache before subsequent tests
+    Rails.cache.clear
   end
 end

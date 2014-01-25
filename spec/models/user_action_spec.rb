@@ -42,6 +42,16 @@ describe UserAction do
       end
     end
 
+    it "sets the last indexed time in memcache" do
+      stubbed_time = Time.now
+      Time.stub(:now => stubbed_time)
+      VCR.use_cassette("twitter", :record => :new_episodes) do
+        expect do
+          UserAction.create_recent_user_actions
+        end.to change { Rails.cache.read('last_tweet_index') }.from(nil).to(stubbed_time)
+      end
+    end
+
     # TODO at the moment we don't have enough tweets to check this
     it "handles pagination"
 

@@ -4,7 +4,7 @@ class UserAction < ActiveRecord::Base
   class << self
     def create_recent_user_actions
       last_tweet_id_captured = maximum(:tweet_id) || 0
-      twitter_client.mentions.map do |tweet|
+      mentions = twitter_client.mentions.map do |tweet|
         if tweet.id > last_tweet_id_captured
           # TODO we can cache this lookup and make this a bit more performant
           user = User.find_or_create_by(twitter_user: tweet.user.screen_name)
@@ -17,7 +17,9 @@ class UserAction < ActiveRecord::Base
             created_at: tweet.created_at
           )
         end
-      end
+      end.compact
+      Rails.cache.write('last_tweet_index', Time.now, :expires_in => 30.days)
+      mentions
     end
 
     def discover_action(text)
