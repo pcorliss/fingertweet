@@ -13,9 +13,9 @@ class UserActionsController < ApplicationController
     @actions = UserAction.order(:created_at).reverse_order.includes(:user)
   end
 
-  # Collection Update
-  # POST /update
-  #def update
-
-  #end
+  # POST /reindex
+  def reindex
+    UserAction.create_recent_user_actions
+    redirect_to :back
+  end
 end

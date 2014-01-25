@@ -23,4 +23,25 @@ describe UserActionsController do
       expect(assigns(:actions)).to eq(user_actions.reverse)
     end
   end
+
+  describe "#reindex" do
+    before do
+      request.env["HTTP_REFERER"] = '/'
+    end
+
+    it "pulls in the latest tweets from twitter" do
+      VCR.use_cassette("twitter", :record => :new_episodes) do
+        expect do
+          post :reindex
+        end.to change { UserAction.count }.from(0).to(1)
+      end
+    end
+
+    it "redirects back" do
+      VCR.use_cassette("twitter", :record => :new_episodes) do
+        post :reindex
+        response.should redirect_to '/'
+      end
+    end
+  end
 end
