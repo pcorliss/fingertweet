@@ -22,7 +22,7 @@ describe ActionHelper do
   describe "#embed_links" do
     it "returns the same text as what went in if there is no http content" do
       sample_text = "This is a sample"
-      expect(embed_links(sample_text)).to eq(sample_text)
+      expect(helper.embed_links(sample_text)).to eq(sample_text)
     end
 
     it "returns linked http content with nofollows" do
@@ -30,23 +30,22 @@ describe ActionHelper do
       expected_text = 'This is a sample with a link ' +
         '<a href="http://www.google.com/foo?asdf=bar" rel="nofollow">' +
         'http://www.google.com/foo?asdf=bar</a>'
-      expect(embed_links(sample_text)).to eq(expected_text)
+      expect(helper.embed_links(sample_text)).to eq(expected_text)
     end
-
   end
 
   describe "#strip_twitter_to" do
     it "removes the @FingerTweeter from the tweet" do
       sample_text = "@FingerTweeter  This show is cool"
-      expect(strip_twitter_to(sample_text)).to eq("This show is cool")
+      expect(helper.strip_twitter_to(sample_text)).to eq("This show is cool")
     end
   end
 
   describe "#sanitize_content" do
     it "embeds links and strips twitter to" do
-      sample_text = "I just ate a fantastic burger from http://t.co/KNoCuZ6nSU @FingerTweeter"
-      expected_text = 'I just ate a fantastic burger from <a href="http://t.co/KNoCuZ6nSU" rel="nofollow">http://t.co/KNoCuZ6nSU</a>'
-      expect(sanitize_content(sample_text)).to eq(expected_text)
+      sample_text = "@pcorliss and I just ate a fantastic burger from http://t.co/KNoCuZ6nSU @FingerTweeter"
+      expected_text = '<a href="https://twitter.com/pcorliss">@pcorliss</a> and I just ate a fantastic burger from <a href="http://t.co/KNoCuZ6nSU" rel="nofollow">http://t.co/KNoCuZ6nSU</a>'
+      expect(helper.sanitize_content(sample_text)).to eq(expected_text)
     end
   end
 

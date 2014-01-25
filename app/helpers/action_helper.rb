@@ -5,7 +5,12 @@ module ActionHelper
   end
 
   def embed_links(text)
-    text.gsub(/(http:\/\/[^\s]+)/, link_to('\1', '\1', :rel => 'nofollow'))
+    linked_text = text.gsub(/http:\/\/[^\s]+/) do |url|
+      link_to(url, url, :rel => 'nofollow')
+    end
+    linked_text.gsub(/@[^\s]+/) do |handle|
+      twitter_linker(handle.delete('@'))
+    end
   end
 
   def strip_twitter_to(text)
