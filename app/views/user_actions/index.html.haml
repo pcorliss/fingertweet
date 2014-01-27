@@ -1,9 +1,44 @@
-%h3 Recent Tweets
-.table-responsive
-  %table.table
-    - @actions.each do |action|
-      %tr
-        %td
-          = link_to user_action_path(:id => action.user.twitter_user) do
-            = image_tag(action.user.avatar_uri, :title => "@#{action.user.twitter_user}")
-        = render 'action_field', :action => action
+%h2 What is this thing?
+
+.row
+  .col-md-6.lead
+    :markdown
+      I noticed a similarity in how twitter is used today compared to old
+      .project and .plan files over the [Finger protocol](http://en.wikipedia.org/wiki/Finger_protocol).
+      But I wanted a way to capture that information without having it get pushed down
+      by all of those [great](http://giphy.com/gifs/iShafmfAZk5XO) [cat](http://giphy.com/gifs/Mhy9hKgfwI0lG)
+      [GIFs](http://giphy.com/gifs/wQI5H4jtqZEPK).
+
+  .col-md-6.lead
+    :markdown
+      Usage is simple. Just tweet [@FingerTweeter](https://twitter.com/FingerTweeter)
+      and within 10 minutes your tweet should show up on your user page as well
+      as the recent tweets page.
+      > @FingerTweeter I'm working on a next-gen cat GIF viewer [http://giphy.com/search/maru](http://giphy.com/search/maru)
+
+.row
+  .col-md-6.lead
+    :markdown
+      Finger Tweeter automatically recognizes certain words in tweets and assigns an
+      action to them. You can use this table as a guide.
+
+  .col-md-4.lead
+    %table.table.table-condensed.col-md-3
+      - AppConfig.actions.tenses.each do |verb, tenses|
+        %tr
+          %td
+            %i.fa{:class => action_icons(verb), :title => verb}
+          - tenses.each do |tense|
+            %td= tense
+
+.row
+  .col-md-12
+    %h3 Recent Tweets
+    .table-responsive
+      %table.table
+        - @actions.each do |action|
+          %tr
+            %td
+              = link_to user_action_path(:id => action.user.twitter_user) do
+                = image_tag(action.user.avatar_uri, :title => "@#{action.user.twitter_user}")
+            = render 'action_field', :action => action

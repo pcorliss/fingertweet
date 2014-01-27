@@ -42,6 +42,9 @@ gem 'unicorn'
 gem 'memcachier'
 gem 'dalli'
 
+# Markdown Filter
+gem 'redcarpet'
+
 group :test, :development do
   gem 'pry'
   gem 'wirble'

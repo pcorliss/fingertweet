@@ -1,9 +1,9 @@
 tenses:
   worked:   [working, worked]
   ate:      [eating, ate]
-  watched:  [watched, watching]
-  listened: [listened, listening]
-  read:     [read, reading]
+  watched:  [watching, watched]
+  listened: [listening, listened]
+  read:     [reading, read]
 
 icons:
   listened: fa-music
